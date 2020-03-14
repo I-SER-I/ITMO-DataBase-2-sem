@@ -1,5 +1,4 @@
 /* 1 */
-/*
 SELECT 
 	Color, COUNT(Color) as 'Amount'
 FROM 
@@ -8,10 +7,8 @@ WHERE
 	Color IS NOT NULL AND ListPrice >= 30
 GROUP BY 
 	Color
-*/
 
 /* 2 */
-/*
 SELECT 
 	Color, MIN(ListPrice) as 'MinPrice'
 FROM 
@@ -22,10 +19,8 @@ GROUP BY
 	Color
 HAVING 
 	MIN(ListPrice) > 100
-*/
 
 /* 3 */
-/*
 SELECT 
 	ProductSubcategoryID, COUNT(*) as 'ProductCount'
 FROM 
@@ -36,10 +31,8 @@ GROUP BY
 	ProductSubcategoryID
 ORDER BY 
 	ProductSubcategoryID
-*/
 
 /* 4 */
-/*
 SELECT 
 	ProductID, COUNT(LineTotal) as 'SalesFacts'
 FROM 
@@ -48,10 +41,8 @@ WHERE
 	ProductID IS NOT NULL
 GROUP BY 
 	ProductID
-*/
 
 /* 5 */
-/*
 SELECT 
 	ProductID, COUNT(LineTotal) as 'SalesFacts'
 FROM 
@@ -62,18 +53,14 @@ GROUP BY
 	ProductID
 HAVING 
 	COUNT(LineTotal) > 5
-*/
 
 /* 6 */
-/* ???
 SELECT 
 	CustomerID
 FROM 
 	Sales.Customer
-*/
 
 /* 7 */
-/*
 SELECT 
 	SalesOrderID, COUNT(*) as 'ProductCount'
 FROM 
@@ -84,10 +71,8 @@ GROUP BY
 	SalesOrderID
 HAVING 
 	COUNT(*) > 3
-*/
 
 /* 8 */
-/*
 SELECT 
 	ProductID, COUNT(*) as 'ProductCount'
 FROM 
@@ -96,10 +81,8 @@ GROUP BY
 	ProductID
 HAVING 
 	COUNT(*) > 3
-*/
 
 /* 9 */
-/*
 SELECT 
 	ProductID, COUNT(*) as 'ProductCount'
 FROM 
@@ -108,10 +91,8 @@ GROUP BY
 	ProductID
 HAVING 
 	COUNT(*) IN (3, 5)
-*/
 
 /* 10 */
-/*
 SELECT 
 	ProductSubcategoryID, COUNT(*) as 'ProductCount'
 FROM 
@@ -122,10 +103,8 @@ GROUP BY
 	ProductSubcategoryID
 HAVING 
 	COUNT(*) > 10
-*/
 
 /* 11 */
-/*
 SELECT 
 	ProductID
 FROM 
@@ -136,10 +115,8 @@ GROUP BY
 	ProductID
 ORDER BY 
 	ProductID
-*/
 
 /* 12 */
-/*
 SELECT TOP 1 
 	SalesOrderID, COUNT(*) as 'ProductCount'
 FROM 
@@ -148,10 +125,8 @@ GROUP BY
 	SalesOrderID
 ORDER BY 
 	COUNT(*) DESC
-*/
 
 /* 13 */
-/*
 SELECT TOP 1 
 	SalesOrderID, UnitPrice
 FROM 
@@ -160,10 +135,8 @@ GROUP BY
 	SalesOrderID, UnitPrice
 ORDER BY 
 	UnitPrice DESC
-*/
 
 /* 14 */
-/*
 SELECT 
 	ProductSubcategoryID, COUNT(*) as 'ProductCount'
 FROM 
@@ -172,10 +145,8 @@ WHERE
 	ProductSubcategoryID IS NOT NULL AND Color IS NOT NULL
 GROUP BY 
 	ProductSubcategoryID
-*/
 
 /* 15 */
-/*
 SELECT 
 	Color, COUNT(*) as 'ProductCount'
 FROM 
@@ -186,10 +157,8 @@ GROUP BY
 	Color
 ORDER BY 
 	COUNT(*) DESC
-*/
 
 /* 16 */
-/*
 SELECT 
 	ProductID, COUNT(*) as 'ProductCount'
 FROM 
@@ -202,4 +171,3 @@ HAVING
 	COUNT(*) > 2
 ORDER BY 
 	ProductID
-*/
