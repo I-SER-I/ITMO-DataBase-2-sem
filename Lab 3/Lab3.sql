@@ -131,38 +131,51 @@ ORDER BY
 
 /* 10 */
 SELECT TOP 1
-    PC.Name
+	PC.Name
 FROM
-    Production.Product AS P
+    	Production.Product AS P
 JOIN
-    Production.ProductSubcategory AS PSC
+ 	Production.ProductSubcategory AS PSC
 ON
-    P.ProductSubcategoryID = PSC.ProductSubcategoryID
+ 	P.ProductSubcategoryID = PSC.ProductSubcategoryID
 JOIN
-    Production.ProductCategory AS PC
+  	Production.ProductCategory AS PC
 ON
-    PSC.ProductCategoryID = PC.ProductCategoryID
+ 	PSC.ProductCategoryID = PC.ProductCategoryID
 JOIN
-    Purchasing.ProductVendor AS PPV
+    	Purchasing.ProductVendor AS PPV
 ON
-    P.ProductID = PPV.ProductID
+    	P.ProductID = PPV.ProductID
 GROUP BY
-    PC.Name
+    	PC.Name
 ORDER BY
-    COUNT(*) DESC
+    	COUNT(*) DESC
     
 /* 11 */
 SELECT
-    PC.Name, COUNT(DISTINCT P.ProductSubcategoryID), COUNT(ProductID)
+    	PC.Name, COUNT(DISTINCT P.ProductSubcategoryID), COUNT(ProductID)
 FROM
-    Production.Product AS P
+    	Production.Product AS P
 JOIN
-    Production.ProductSubcategory AS PSC
+    	Production.ProductSubcategory AS PSC
 ON
-    P.ProductSubcategoryID = PSC.ProductSubcategoryID
+    	P.ProductSubcategoryID = PSC.ProductSubcategoryID
 JOIN
-    Production.ProductCategory AS PC
+    	Production.ProductCategory AS PC
 ON
-    PC.ProductCategoryID = PSC.ProductCategoryID
+  	PC.ProductCategoryID = PSC.ProductCategoryID
 GROUP BY
-    PC.Name
+    	PC.Name
+
+/* 12 */
+  
+SELECT
+    	CreditRating, COUNT(ProductID)
+FROM
+    	Purchasing.ProductVendor AS PV
+JOIN
+    	Purchasing.Vendor AS V
+ON
+    	PV.BusinessEntityID = V.BusinessEntityID
+GROUP BY
+    	CreditRating
