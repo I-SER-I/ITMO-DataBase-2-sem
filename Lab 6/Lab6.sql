@@ -2,11 +2,11 @@
 SELECT 
 	Name, SalesOrderID, (SUM(OrderQty) OVER(PARTITION BY Name, SalesOrderID) * UnitPrice)
 FROM 
-	Sales.SalesOrderDetail AS SOD 
+	Sales.SalesOrderDetail AS SSOD 
 JOIN 
 	Production.Product AS PP 
 ON 
-	SOD.ProductID = PP.ProductID
+	SSOD.ProductID = PP.ProductID
 
 /* 2 */
 SELECT 
